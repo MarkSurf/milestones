@@ -51,9 +51,9 @@ Coded by www.creative-tim.com
         }
 
         .slider .noUi-handle {
-            border-color: #eac438;
-            background-color: #eac438;
-            box-shadow: 0 0 5px 0 #eac438;
+            border-color: #51cbce;
+            background-color: #51cbce;
+            box-shadow: 0 0 2px 0 #51cbce;
         }
 
         p, ol {
@@ -1586,6 +1586,7 @@ Coded by www.creative-tim.com
         }
 
         fetch("https://script.google.com/macros/s/AKfycbxcFxtlrI_w8RHmGXPjz_w9cMlHWLqrBZXbMEXSWSTV2guYRh4/exec?id=" + id, {
+            crossDomain: true,
             method: 'GET'
         })
             .then(response => response.json()).then(data => fillResponses(data))
@@ -1626,6 +1627,7 @@ Coded by www.creative-tim.com
         console.log("saving");
         $("#saving").show();
         fetch("https://script.google.com/macros/s/AKfycbxcFxtlrI_w8RHmGXPjz_w9cMlHWLqrBZXbMEXSWSTV2guYRh4/exec", {
+            crossDomain: true,
             method: 'POST',
             body: JSON.stringify(data)
         })
