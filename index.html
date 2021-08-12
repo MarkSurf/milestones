@@ -25,8 +25,6 @@ Coded by www.creative-tim.com
     </title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
           name='viewport'/>
-    <meta name="description"
-          content="Paper Kit 2 PRO is a premium Bootstrap 4 kit coded by Creative Tim. It is a beautiful cross-platform UI kit featuring over 1000 components, 34 sections and 11 example pages.">
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet"/>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
@@ -119,7 +117,7 @@ Coded by www.creative-tim.com
                                         <strong>when</strong>
                                         they expect a milestone to be reached, how <strong>certain</strong> they are
                                         about this, and
-                                        what they think the potential <strong>impact</strong> for Surf is.
+                                        what they think the potential <strong>impact</strong> for Surf will be.
                                     </p>
 
 
@@ -139,7 +137,7 @@ Coded by www.creative-tim.com
                                     </p>
                                     <ol>
                                         <li><strong>When</strong> will this milestone be reached</li>
-                                        <li>How <strong>sure</strong> are you of this date</li>
+                                        <li>How <strong>certain</strong> are you of this date</li>
                                         <li>What will the <strong>impact</strong> for Surf be</li>
                                     </ol>
                                     <p>
@@ -152,13 +150,15 @@ Coded by www.creative-tim.com
                                         answer
                                         when you think the milestone is reached first. The impact for Surf can be any
                                         kind of
-                                        impact, like the need to offer services using this innovation to having to
+                                        impact, like the need to offer services using this innovation or having to
                                         change
-                                        how or needing to change how the work is that Surf is being done. Feel free to answer any amount of
+                                        how work is being done. Feel free to answer or skip any amount of
                                         questions.
 
-                                        <br><br>Answers are saved automatically in a Google Sheet and you can continue at any time as long as you
-                                        don't delete the cookie with the random id that has been set for this page.
+                                        <br><br>Answers are saved automatically in a Google Sheet. The questionnaire uses
+                                        an unique id for each user that is saved locally in a cookie. This id is used to
+                                        allow you to continue the questionnaire where you left of after returning to the page.
+
 
                                     </p>
                                 </div>
@@ -189,7 +189,7 @@ Coded by www.creative-tim.com
                     <br/>
                     <div class="card card-plain card-blog">
                         <div class="row">
-                            <div class="col-md-5">Your Name</div>
+                            <div class="col-md-5">Your Name <i>(optional)</i></div>
                             <div class="col-md-7">
                                 <div class="row">
                                     <div class="form-group">
@@ -1342,6 +1342,34 @@ Coded by www.creative-tim.com
     </div>
 </div>
 <!--     *********     END RESEARCH      *********      -->
+
+    <!--     *********     COMMENTS      *********      -->
+    <div class="section secion-blog cd-section section-gray" id="section-comments">
+        <div class="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 ml-auto mr-auto">
+                        <h2 class="title">COMMENTS</h2>
+                        <br/>
+                        <div class="card card-plain card-blog">
+                            <div class="row">
+                                <div class="col-md-5">Comments <i>(optional)</i></div>
+                                <div class="col-md-7">
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <input id="comments" type="text" class="form-control border-input" placeholder="Remarks, suggestions, new milestones, etc">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--     *********     END COMMENTS      *********      -->
+
 </div>
 
 <div class="saving" style="display: none;" id="saving">Saving...</div>
@@ -1399,6 +1427,12 @@ Coded by www.creative-tim.com
             <a href="#section-research" data-number="9">
                 <span class="cd-dot"></span>
                 <span class="cd-label">Research</span>
+            </a>
+        </li>
+        <li>
+            <a href="#section-comments" data-number="10">
+                <span class="cd-dot"></span>
+                <span class="cd-label">Comments</span>
             </a>
         </li>
     </ul>
@@ -1587,9 +1621,7 @@ Coded by www.creative-tim.com
 
         fetch("https://script.google.com/macros/s/AKfycbxcFxtlrI_w8RHmGXPjz_w9cMlHWLqrBZXbMEXSWSTV2guYRh4/exec?id=" + id, {
             crossDomain: true,
-            //mode: 'no-cors',
             method: 'GET',
-            //dataType: 'jsonp',
         })
             .then(response => response.json()).then(data => fillResponses(data))
             .catch(error => showError(error.message))
@@ -1630,9 +1662,7 @@ Coded by www.creative-tim.com
         $("#saving").show();
         fetch("https://script.google.com/macros/s/AKfycbxcFxtlrI_w8RHmGXPjz_w9cMlHWLqrBZXbMEXSWSTV2guYRh4/exec", {
             crossDomain: true,
-            //mode: 'no-cors',
             method: 'POST',
-            //dataType: 'jsonp',
             body: JSON.stringify(data)
         })
             .then(function(){ console.log("done saving"); $("#saving").hide(); })
