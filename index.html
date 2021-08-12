@@ -1587,6 +1587,9 @@ Coded by www.creative-tim.com
 
         fetch("https://script.google.com/macros/s/AKfycbxcFxtlrI_w8RHmGXPjz_w9cMlHWLqrBZXbMEXSWSTV2guYRh4/exec?id=" + id, {
             crossDomain: true,
+            "headers": {
+                "Access-Control-Allow-Origin":"*"
+            },
             method: 'GET'
         })
             .then(response => response.json()).then(data => fillResponses(data))
@@ -1628,7 +1631,9 @@ Coded by www.creative-tim.com
         $("#saving").show();
         fetch("https://script.google.com/macros/s/AKfycbxcFxtlrI_w8RHmGXPjz_w9cMlHWLqrBZXbMEXSWSTV2guYRh4/exec", {
             crossDomain: true,
-            method: 'POST',
+            "headers": {
+                "Access-Control-Allow-Origin":"*"
+            },           method: 'POST',
             body: JSON.stringify(data)
         })
             .then(function(){ console.log("done saving"); $("#saving").hide(); })
