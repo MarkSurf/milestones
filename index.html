@@ -1589,7 +1589,7 @@ Coded by www.creative-tim.com
             crossDomain: true,
             mode: 'no-cors',
             method: 'GET',
-            dataType: 'jsonp',
+            //dataType: 'jsonp',
         })
             .then(response => response.json()).then(data => fillResponses(data))
             .catch(error => showError(error.message))
@@ -1632,7 +1632,7 @@ Coded by www.creative-tim.com
             crossDomain: true,
             mode: 'no-cors',
             method: 'POST',
-            dataType: 'jsonp',
+            //dataType: 'jsonp',
             body: JSON.stringify(data)
         })
             .then(function(){ console.log("done saving"); $("#saving").hide(); })
