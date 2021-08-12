@@ -1590,7 +1590,8 @@ Coded by www.creative-tim.com
             "headers": {
                 "Access-Control-Allow-Origin":"*"
             },
-            method: 'GET'
+            method: 'GET',
+            dataType: 'jsonp',
         })
             .then(response => response.json()).then(data => fillResponses(data))
             .catch(error => showError(error.message))
@@ -1633,7 +1634,9 @@ Coded by www.creative-tim.com
             crossDomain: true,
             "headers": {
                 "Access-Control-Allow-Origin":"*"
-            },           method: 'POST',
+            },
+            method: 'POST',
+            dataType: 'jsonp',
             body: JSON.stringify(data)
         })
             .then(function(){ console.log("done saving"); $("#saving").hide(); })
