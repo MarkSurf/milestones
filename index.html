@@ -1630,6 +1630,7 @@ Coded by www.creative-tim.com
 
     function fillResponses(data) {
         $("#name").val(data.name);
+        $("#comments").val(data.comments);
 
         Object.keys(data).forEach(function (key) {
             let split = key.split("_");
@@ -1680,6 +1681,7 @@ Coded by www.creative-tim.com
         let body = {
             id: id,
             name: $("#name").val(),
+            comments: $("#comments").val(),
         }
 
         $("[data-question]").each(function () {
