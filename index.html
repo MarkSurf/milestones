@@ -1480,6 +1480,10 @@ Coded by www.creative-tim.com
     let initDone = false;
 
     $(document).ready(function () {
+        $( "#name,#comments" ).change(function() {
+            onChange();
+        });
+
         $(".when-slider").each(function (index) {
             let slider = noUiSlider.create(this, {
                 tooltips: [true],
